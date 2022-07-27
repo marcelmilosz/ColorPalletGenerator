@@ -44,3 +44,127 @@ table {
 /* ^^^ Reset all elements ^^^ */
 
 /* \/ Our Code \/ */
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #F4F4F4;
+}
+
+.main-container{
+    width: 100%;
+    height: calc(100% - 50px);
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.box {
+    flex: 1; /* equal size for all boxes */
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.box i {
+    visibility: hidden;
+}
+
+.box:hover i {
+    visibility: visible;
+}
+
+.box i {
+    margin-bottom: 40px;
+    font-size: 28px;
+    transition: font-size, 100ms;
+}
+
+.box i:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.hex-color-text {
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: font-size, 100ms;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.rgb-color-text {
+    margin-bottom: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: font-size, 100ms;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.hex-color-text:hover, .rgb-color-text:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+.color-closest-name {
+    margin-bottom: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.action-icon-box {
+
+    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 1036px) {
+    .navbar {
+        background-color: gold;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .box {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .box i {
+        margin: 0;
+        margin-left: 10px;
+        order: 2;
+    }
+
+    .hex-color-text {
+        margin: 0;
+        margin-left: 10px;
+        order: 1;
+    }
+
+    .rgb-color-text, .color-closest-name {
+        display: none;
+    }
+
+}
