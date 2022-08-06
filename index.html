@@ -13,44 +13,84 @@
 
     <link rel="stylesheet" href="app.css">
 
-    <title> Hi :)</title>
+    <title> Color Picker 2k22 </title>
 </head>
-<body>
+
+<!-- To DO 
+
+    - Zrobiłeś w pociągu wszystko elegancko
+    - Działają kolory, losowanie i locks 
+    
+    - DONE |ZROB Kopiowanie po nacisnieciu na RGB i HEX oraz fajną animację (Copied to clipboard)
+    - ZROB zeby mozna bylo dodać kolejny box 
+    - Zrób taką mini paletę z kolorów 
+    - Zrób undo i redo 
+-->
+
+
+<body onload="spaceBarClicked()">
 
     <div class="navbar">
-        <p> Press spacebar for color </p>
+        <p> Press spacebar or <button onclick="spaceBarClicked()"> Click me! </button></p>
+        <p style="margin-left: 30px"> Undo | Redo 
+            <span onclick="undo()" class="undoBtn"><i class="fa-solid fa-arrow-left-long"></i></span>
+            <span onclick="redo()" class="redoBtn"><i class="fa-solid fa-arrow-right-long"></i></span>
+        </p>
 
+        <div class="mini-pallet">
+            <div class="mini-box"></div>
+            <div class="mini-box"></div>   
+            <div class="mini-box"></div>   
+            <div class="mini-box"></div>   
+            <div class="mini-box"></div>      
+        </div>
+    </div>
+
+    <div class="alert-box">
+        <div class="alert-box-wr">
+            <p> <i class="fa-solid fa-circle-check"></i> Copied to clipboard </p>
+        </div>
     </div>
 
 
     <div class="main-container">
         
-        <div class="box" style="background-color: red">
+        <div id="1" class="box">
             <!-- <i class="fa-solid fa-lock"></i> -->
+            <input class="setColor" type="color" value="#FFFFFF">
+            <i class="setColorI fa-solid fa-droplet"></i>
             <i class="lock fa-solid fa-unlock"></i>
             <p class="hex-color-text"> #ABCDEF </p>
             <p class="rgb-color-text"> rgb(123, 123, 123) </p>
             <p class="color-closest-name"> asd xx </p>
         </div>
-        <div class="box" style="background-color: blue">
+        <div id="2" class="box">
+            <input class="setColor" type="color" value="#FFFFFF">
+            <i class="setColorI fa-solid fa-droplet"></i>
             <i class="lock fa-solid fa-unlock"></i>
             <p class="hex-color-text"> #ABCDEF </p>
             <p class="rgb-color-text"> rgb(123, 123, 123) </p>
             <p class="color-closest-name"> Cornblue xx </p>
         </div>
-        <div class="box" style="background-color: green">
+        <div id="3" class="box">
+            <input class="setColor" type="color" value="#FFFFFF">
+            <i class="setColorI fa-solid fa-droplet"></i>
             <i class="lock fa-solid fa-unlock"></i>
             <p class="hex-color-text"> #ABCDEF </p>
             <p class="rgb-color-text"> rgb(123, 123, 123) </p>
             <p class="color-closest-name"> Cornblue xx </p>
         </div>
-        <div class="box" style="background-color: pink">
+        <div id="4" class="box">
+            <input class="setColor" type="color" value="#FFFFFF">
+            <i class="setColorI fa-solid fa-droplet"></i>
             <i class="lock fa-solid fa-unlock"></i>
             <p class="hex-color-text"> #ABCDEF </p>
             <p class="rgb-color-text"> rgb(123, 123, 123) </p>
             <p class="color-closest-name"> Cornblue xx </p>
         </div>
-        <div class="box" style="background-color: yellow">
+        <div id="5" class="box">
+            <input class="setColor" type="color" value="#FFFFFF">
+            <i class="setColorI fa-solid fa-droplet"></i>
             <i class="lock fa-solid fa-unlock"></i>
             <p class="hex-color-text"> #ABCDEF </p>
             <p class="rgb-color-text"> rgb(123, 123, 123) </p>
